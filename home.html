@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoyo Tips - Premium Betting Tips & Predictions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 135, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00ff87;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 255, 135, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 135, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .highlight {
+            color: #00ff87;
+            text-shadow: 0 0 20px rgba(0, 255, 135, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #b8b8b8;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 255, 135, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 16px 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00ff87;
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stats-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #00ff87;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #b8b8b8;
+            font-size: 14px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #b8b8b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 255, 135, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+            color: #0f0f23;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            background: rgba(0, 255, 135, 0.1);
+            border-color: #00ff87;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00ff87;
+            margin-bottom: 8px;
+        }
+
+        .price-period {
+            color: #b8b8b8;
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            color: #b8b8b8;
+        }
+
+        .features-list li i {
+            color: #00ff87;
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a1a;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #00ff87;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #b8b8b8;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #00ff87;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #00ff87;
+            color: #0f0f23;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animation for floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Tips Preview */
+        .tips-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #00ff87;
+        }
+
+        .tip-match {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tip-odds {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .win-rate {
+            color: #00ff87;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">YOYO TIPS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tips">Free Tips</a></li>
+                <li><a href="#pricing">Membership</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#pricing" class="cta-button">Join Premium</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
+                        <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get started with our free daily tips!</p>
+                        <div class="hero-buttons">
+                            <a href="#tips" class="btn-primary">Get Free Tips</a>
+                            <a href="#pricing" class="btn-secondary">View Plans</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="stats-card floating">
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <h3>87%</h3>
+                                    <p>Win Rate</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>15K+</h3>
+                                    <p>Members</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>$2.4M</h3>
+                                    <p>Total Profits</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>4.9★</h3>
+                                    <p>Rating</p>
+                                </div>
+                            </div>
+                            <div class="tips-preview">
+                                <div class="tip-match">
+                                    <span>Man City vs Arsenal</span>
+                                    <span class="tip-odds">2.45</span>
+                                </div>
+                                <div style="font-size: 12px; color: #b8b8b8;">Over 2.5 Goals • <span class="win-rate">92% confidence</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Yoyo Tips?</h2>
+                    <p>Our advanced analytics and expert tipsters deliver consistent results for serious bettors</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Our AI-powered system analyzes over 200 data points per match, including team form, player stats, weather conditions, and historical performance to deliver accurate predictions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Expert Tipsters</h3>
+                        <p>Professional analysts with 10+ years experience in sports betting provide daily insights and carefully selected high-value betting opportunities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Proven Track Record</h3>
+                        <p>87% average win rate with fully transparent results. All tips are tracked and verified independently to ensure complete accuracy and reliability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Instant Notifications</h3>
+                        <p>Receive tips instantly via email, SMS, and mobile app notifications. Never miss a winning opportunity with our real-time alert system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Money Back Guarantee</h3>
+                        <p>We're so confident in our tips that we offer a 30-day money-back guarantee. If you're not profitable, get your money back - no questions asked.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Premium customer support available around the clock. Get help with betting strategies, account questions, or technical support whenever you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Choose Your Membership</h2>
+                    <p>Start with free tips or unlock premium predictions for bigger odds and higher profits</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Free Starter</h3>
+                        <div class="price">$0</div>
+                        <div class="price-period">Forever</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 3 Free Tips Daily</li>
+                            <li><i class="fas fa-check"></i> Basic Match Analysis</li>
+                            <li><i class="fas fa-check"></i> Email Notifications</li>
+                            <li><i class="fas fa-check"></i> Community Access</li>
+                            <li><i class="fas fa-times" style="color: #666;"></i> Premium Odds</li>
+                            <li><i class="fas fa-times" style="color: #666;"></i> VIP Support</li>
+                        </ul>
+                        <a href="#" class="btn-secondary" style="display: inline-block; width: 100%;">Get Started Free</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <h3>Premium Pro</h3>
+                        <div class="price">$49</div>
+                        <div class="price-period">Per Month</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 15+ Daily Premium Tips</li>
+                            <li><i class="fas fa-check"></i> Higher Odds (2.0 - 5.0+)</li>
+                            <li><i class="fas fa-check"></i> Detailed Analysis Reports</li>
+                            <li><i class="fas fa-check"></i> SMS + App Notifications</li>
+                            <li><i class="fas fa-check"></i> Live Chat Support</li>
+                            <li><i class="fas fa-check"></i> Profit Tracking Tools</li>
+                        </ul>
+                        <a href="#" class="btn-primary" style="display: inline-block; width: 100%;">Join Premium</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>VIP Elite</h3>
+                        <div class="price">$99</div>
+                        <div class="price-period">Per Month</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 25+ VIP Tips Daily</li>
+                            <li><i class="fas fa-check"></i> Exclusive High Odds (3.0+)</li>
+                            <li><i class="fas fa-check"></i> Personal Betting Consultant</li>
+                            <li><i class="fas fa-check"></i> Custom Strategies</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                            <li><i class="fas fa-check"></i> Monthly Video Calls</li>
+                        </ul>
+                        <a href="#" class="btn-secondary" style="display: inline-block; width: 100%;">Go VIP</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yoyo Tips</h3>
+                    <p>Professional betting tips and predictions for serious bettors. Join thousands of profitable members worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#tips">Free Tips</a></p>
+                    <p><a href="#pricing">Membership Plans</a></p>
+                    <p><a href="#results">Results Archive</a></p>
+                    <p><a href="#faq">FAQ</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><a href="#contact">Contact Us</a></p>
+                    <p><a href="#help">Help Center</a></p>
+                    <p><a href="#terms">Terms of Service</a></p>
+                    <p><a href="#privacy">Privacy Policy</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p>Responsible Gambling</p>
+                    <p>Age Verification</p>
+                    <p>Terms & Conditions</p>
+                    <p>Refund Policy</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yoyo Tips. All rights reserved. | Gamble responsibly. 18+ only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 35, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 15, 35, 0.95)';
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Dynamic stats counter (simulated)
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-item h3');
+            stats.forEach(stat => {
+                const finalValue = stat.textContent;
+                let currentValue = 0;
+                const increment = finalValue.includes('%') ? 1 : 100;
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (finalValue.includes('%')) {
+                        stat.textContent = currentValue + '%';
+                        if (currentValue >= 87) clearInterval(timer);
+                    } else if (finalValue.includes('K')) {
+                        stat.textContent = (currentValue / 1000).toFixed(1) + 'K+';
+                        if (currentValue >= 15000) clearInterval(timer);
+                    } else if (finalValue.includes('M')) {
+                        stat.textContent = '$' + (currentValue / 1000000).toFixed(1) + 'M';
+                        if (currentValue >= 2400000) clearInterval(timer);
+                    } else if (finalValue.includes('★')) {
+                        stat.textContent = (currentValue / 10).toFixed(1) + '★';
+                        if (currentValue >= 49) clearInterval(timer);
+                    }
+                }, 50);
+            });
+        }
+
+        // Trigger stats animation when hero section is visible
+        const heroObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        heroObserver.observe(document.querySelector('.hero'));
+    </script>
+</body>
+</html>
+
