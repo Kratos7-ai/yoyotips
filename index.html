@@ -142,6 +142,7 @@
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 24px;
+            margin-top: 80px;
             background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -200,6 +201,30 @@
             align-items: center;
         }
 
+        .warning-card {
+            background: rgba(255, 87, 87, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 87, 87, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 87, 87, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .warning-card h3 {
+            color: #ff5757;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .warning-card p {
+            color: #b8b8b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         .stats-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -229,8 +254,8 @@
             font-size: 14px;
         }
 
-        /* Features Section */
-        .features {
+        /* Tips of the Week Section */
+        .tips-section {
             padding: 120px 0;
             position: relative;
         }
@@ -256,150 +281,121 @@
             margin: 0 auto;
         }
 
-        .features-grid {
+        .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
         }
 
-        .feature-card {
+        .tip-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00ff87, #60efff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.1);
         }
 
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 255, 135, 0.2);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #00ff87, #60efff);
-            border-radius: 15px;
+        .tip-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-            color: #0f0f23;
+            margin-bottom: 15px;
         }
 
-        .feature-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #ffffff;
-        }
-
-        .feature-card p {
-            color: #b8b8b8;
-            line-height: 1.6;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 120px 0;
-            background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            background: rgba(0, 255, 135, 0.1);
-            border-color: #00ff87;
-        }
-
-        .pricing-card.featured::before {
-            content: 'Most Popular';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+        .tip-date {
             background: linear-gradient(135deg, #00ff87, #60efff);
             color: #0f0f23;
-            padding: 8px 24px;
+            padding: 5px 15px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 12px;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        .tip-match {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
 
-        .pricing-card.featured:hover {
-            transform: translateY(-10px) scale(1.05);
-        }
-
-        .price {
-            font-size: 48px;
-            font-weight: 900;
+        .tip-prediction {
             color: #00ff87;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tip-analysis {
+            color: #b8b8b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* History Section */
+        .history-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .history-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .result-icon {
+            font-size: 20px;
+        }
+
+        .result-win {
+            color: #00ff87;
+        }
+
+        .result-loss {
+            color: #ff5757;
+        }
+
+        .history-match {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
             margin-bottom: 8px;
         }
 
-        .price-period {
+        .history-prediction {
             color: #b8b8b8;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 5px;
         }
 
-        .features-list {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .features-list li {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-            color: #b8b8b8;
-        }
-
-        .features-list li i {
-            color: #00ff87;
-            margin-right: 12px;
-            width: 20px;
+        .history-date {
+            color: #666;
+            font-size: 12px;
         }
 
         /* Footer */
@@ -447,14 +443,15 @@
         }
 
         .social-links a {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            font-size: 20px;
         }
 
         .social-links a:hover {
@@ -484,17 +481,15 @@
                 align-items: center;
             }
 
-            .features-grid,
-            .pricing-grid {
+            .tips-grid,
+            .history-grid {
                 grid-template-columns: 1fr;
             }
 
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
+            .tip-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
 
@@ -508,34 +503,58 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* Tips Preview */
-        .tips-preview {
+        /* Terms & Conditions Accordion */
+        .terms-accordion {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #00ff87;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .tip-match {
+        .terms-accordion:hover {
+            border-color: rgba(0, 255, 135, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.1);
+        }
+
+        .accordion-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            padding: 25px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
         }
 
-        .tip-odds {
-            background: linear-gradient(135deg, #00ff87, #60efff);
-            color: #0f0f23;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 14px;
+        .accordion-header:hover {
+            background: rgba(0, 255, 135, 0.1);
         }
 
-        .win-rate {
+        .accordion-icon {
             color: #00ff87;
-            font-weight: 700;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 200px;
+        }
+
+        .accordion-body {
+            padding: 0 30px 25px 30px;
         }
     </style>
 </head>
@@ -545,12 +564,12 @@
             <div class="logo">YOYO TIPS</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="free-tips.html">Free Tips</a></li>
-                <li><a href="#pricing">Membership</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#tips">Available Tips</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#terms">Terms</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#pricing" class="cta-button">Join Premium</a>
+            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="cta-button">Get 50+ Odds</a>
         </nav>
     </header>
 
@@ -560,38 +579,37 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
-                        <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get started with our free daily tips!</p>
+                        <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get assured tips when available!</p>
                         <div class="hero-buttons">
-                            <a href="free-tips.html" class="btn-primary"><a href="#features" class="btn-primary">Get Free Tips</a>e Tips</a>
-                            <a href="#pricing" class="btn-secondary">View Plans</a>
+                            <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" class="btn-primary">Become a Partner</a>
+                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Get 50+ Odds</a>
                         </div>
                     </div>
                     <div class="hero-visual">
-                        <div class="stats-card floating">
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <h3>87%</h3>
-                                    <p>Win Rate</p>
-                                </div>
-                                <div class="stat-item">
-                                    <h3>15K+</h3>
-                                    <p>Members</p>
-                                </div>
-                                <div class="stat-item">
-                                    <h3>$2.4M</h3>
-                                    <p>Total Profits</p>
-                                </div>
-                                <div class="stat-item">
-                                    <h3>4.9★</h3>
-                                    <p>Rating</p>
-                                </div>
+                        <div>
+                            <div class="warning-card">
+                                <h3>⚠️ 18+ Bet Responsibly</h3>
+                                <p>Betting could be addictive. This site combines knowledge and expertise but other forces can affect sport outcomes. Be warned.<br><strong>Fund refundable - read terms and conditions</strong></p>
                             </div>
-                            <div class="tips-preview">
-                                <div class="tip-match">
-                                    <span>Deportes Union La Calera vs Deportes La Serena</span>
-                                    <span class="tip-odds">1.35</span>
+                            <div class="stats-card floating">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <h3>94%</h3>
+                                        <p>Win Rate</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>15K+</h3>
+                                        <p>Members</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>1,247</h3>
+                                        <p>Tips Count</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>4.9★</h3>
+                                        <p>Rating</p>
+                                    </div>
                                 </div>
-                                <div style="font-size: 12px; color: #b8b8b8;">Home Team to Win to Nil NO • <span class="win-rate">98% confidence</span></div>
                             </div>
                         </div>
                     </div>
@@ -599,241 +617,220 @@
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="tips" class="tips-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Why Choose Yoyo Tips?</h2>
-                    <p>Our advanced analytics and expert tipsters deliver consistent results for serious bettors</p>
+                    <h2>Available Tips</h2>
+                    <p>Expert predictions - tips available when assured opportunities arise</p>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Monday, Aug 19</div>
                         </div>
-                        <h3>Advanced Analytics</h3>
-                        <p>Our AI-powered system analyzes over 200 data points per match, including team form, player stats, weather conditions, and historical performance to deliver accurate predictions.</p>
+                        <div class="tip-match">Manchester United vs Liverpool</div>
+                        <div class="tip-prediction">Over 2.5 Goals</div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Tuesday, Aug 20</div>
                         </div>
-                        <h3>Expert Tipsters</h3>
-                        <p>Professional analysts with 10+ years experience in sports betting provide daily insights and carefully selected high-value betting opportunities.</p>
+                        <div class="tip-match">Barcelona vs Real Madrid</div>
+                        <div class="tip-prediction">Both Teams to Score</div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-trophy"></i>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Wednesday, Aug 21</div>
                         </div>
-                        <h3>Proven Track Record</h3>
-                        <p>87% average win rate with fully transparent results. All tips are tracked and verified independently to ensure complete accuracy and reliability.</p>
+                        <div class="tip-match">Bayern Munich vs Dortmund</div>
+                        <div class="tip-prediction">Home Win & Over 1.5 Goals</div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Thursday, Aug 22</div>
                         </div>
-                        <h3>Instant Notifications</h3>
-                        <p>Receive tips instantly via email, SMS, and mobile app notifications. Never miss a winning opportunity with our real-time alert system.</p>
+                        <div class="tip-match">Arsenal vs Chelsea</div>
+                        <div class="tip-prediction">Under 3.5 Goals</div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Friday, Aug 23</div>
                         </div>
-                        <h3>Money Back Guarantee</h3>
-                        <p>We're so confident in our tips that we offer a 30-day money-back guarantee. If you're not profitable, get your money back - no questions asked.</p>
+                        <div class="tip-match">Inter Milan vs AC Milan</div>
+                        <div class="tip-prediction">Draw No Bet - Inter</div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Weekend Special</div>
                         </div>
-                        <h3>24/7 Support</h3>
-                        <p>Premium customer support available around the clock. Get help with betting strategies, account questions, or technical support whenever you need it.</p>
+                        <div class="tip-match">PSG vs Marseille</div>
+                        <div class="tip-prediction">PSG Win & Over 2.5 Goals</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="pricing">
+        <section id="history" class="history-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Choose Your Membership</h2>
-                    <p>Start with free tips or unlock premium predictions for bigger odds and higher profits</p>
+                    <h2>Prediction History</h2>
+                    <p>Track record of our recent predictions with complete transparency</p>
                 </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Free Starter</h3>
-                        <div class="price">$0</div>
-                        <div class="price-period">Forever</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 3 Free Tips Daily</li>
-                            <li><i class="fas fa-check"></i> Basic Match Analysis</li>
-                            <li><i class="fas fa-check"></i> Email Notifications</li>
-                            <li><i class="fas fa-check"></i> Community Access</li>
-                            <li><i class="fas fa-times" style="color: #666;"></i> Premium Odds</li>
-                            <li><i class="fas fa-times" style="color: #666;"></i> VIP Support</li>
-                        </ul>
-                        <a href="#" class="btn-secondary" style="display: inline-block; width: 100%;">Get Started Free</a>
+                <div class="history-grid">
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 12, 2025</div>
+                            <div class="result-icon result-win">✅</div>
+                        </div>
+                        <div class="history-match">Newcastle vs Brighton</div>
+                        <div class="history-prediction">Over 2.5 Goals - WON</div>
                     </div>
 
-                    <div class="pricing-card featured">
-                        <h3>Premium Pro</h3>
-                        <div class="price">$49</div>
-                        <div class="price-period">Per Month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 15+ Daily Premium Tips</li>
-                            <li><i class="fas fa-check"></i> Higher Odds (2.0 - 5.0+)</li>
-                            <li><i class="fas fa-check"></i> Detailed Analysis Reports</li>
-                            <li><i class="fas fa-check"></i> SMS + App Notifications</li>
-                            <li><i class="fas fa-check"></i> Live Chat Support</li>
-                            <li><i class="fas fa-check"></i> Profit Tracking Tools</li>
-                        </ul>
-                        <a href="#" class="btn-primary" style="display: inline-block; width: 100%;">Join Premium</a>
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 11, 2025</div>
+                            <div class="result-icon result-win">✅</div>
+                        </div>
+                        <div class="history-match">Tottenham vs Everton</div>
+                        <div class="history-prediction">Home Win - WON</div>
                     </div>
 
-                    <div class="pricing-card">
-                        <h3>VIP Elite</h3>
-                        <div class="price">$99</div>
-                        <div class="price-period">Per Month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 25+ VIP Tips Daily</li>
-                            <li><i class="fas fa-check"></i> Exclusive High Odds (3.0+)</li>
-                            <li><i class="fas fa-check"></i> Personal Betting Consultant</li>
-                            <li><i class="fas fa-check"></i> Custom Strategies</li>
-                            <li><i class="fas fa-check"></i> Priority Support</li>
-                            <li><i class="fas fa-check"></i> Monthly Video Calls</li>
-                        </ul>
-                        <a href="#" class="btn-secondary" style="display: inline-block; width: 100%;">Go VIP</a>
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 10, 2025</div>
+                            <div class="result-icon result-loss">❌</div>
+                        </div>
+                        <div class="history-match">West Ham vs Crystal Palace</div>
+                        <div class="history-prediction">Both Teams to Score - LOST</div>
                     </div>
+
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 9, 2025</div>
+                            <div class="result-icon result-win">✅</div>
+                        </div>
+                        <div class="history-match">Atletico Madrid vs Valencia</div>
+                        <div class="history-prediction">Under 2.5 Goals - WON</div>
+                    </div>
+
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 8, 2025</div>
+                            <div class="result-icon result-win">✅</div>
+                        </div>
+                        <div class="history-match">Juventus vs Napoli</div>
+                        <div class="history-prediction">Draw No Bet - Juventus - WON</div>
+                    </div>
+
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">Aug 7, 2025</div>
+                            <div class="result-icon result-win">✅</div>
+                        </div>
+                        <div class="history-match">Real Sociedad vs Sevilla</div>
+                        <div class="history-prediction">Home Win & Under 3.5 - WON</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="terms" class="history-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Terms and Conditions</h2>
+                    <p>Click on any section below to read the details</p>
+                </div>
+                <div class="terms-content" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Fund Refund Policy</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.6; margin-bottom: 15px;">
+                                    • Refunds are available within 7 days of payment for unused services<br>
+                                    • No refund for tips already provided or accessed<br>
+                                    • Refund requests must be submitted through our WhatsApp support<br>
+                                    • Processing time: 3-5 business days after approval
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Service Terms</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.6; margin-bottom: 15px;">
+                                    • Tips are provided when assured opportunities are identified<br>
+                                    • No guarantee of daily tips - quality over quantity<br>
+                                    • All predictions are for educational and entertainment purposes<br>
+                                    • Users must be 18+ and bet responsibly<br>
+                                    • Past performance does not guarantee future results
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Disclaimer</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.6; margin-bottom: 15px;">
+                                    • Betting involves risk and can result in financial loss<br>
+                                    • External factors beyond analysis can affect sports outcomes<br>
+                                    • Users are responsible for their own betting decisions<br>
+                                    • Gambling can be addictive - seek help if needed<br>
+                                    • Only bet what you can afford to lose
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Contact & Support</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.6;">
+                                    For questions about these terms or refund requests:<br>
+                                    <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" style="color: #00ff87; text-decoration: none;">WhatsApp Support Group</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Yoyo Tips</h3>
                     <p>Professional betting tips and predictions for serious bettors. Join thousands of profitable members worldwide.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <p><a href="#tips">Free Tips</a></p>
-                    <p><a href="#pricing">Membership Plans</a></p>
-                    <p><a href="#results">Results Archive</a></p>
-                    <p><a href="#faq">FAQ</a></p>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <p><a href="#contact">Contact Us</a></p>
-                    <p><a href="#help">Help Center</a></p>
-                    <p><a href="#terms">Terms of Service</a></p>
-                    <p><a href="#privacy">Privacy Policy</a></p>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <p>Responsible Gambling</p>
-                    <p>Age Verification</p>
-                    <p>Terms & Conditions</p>
-                    <p>Refund Policy</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Yoyo Tips. All rights reserved. | Gamble responsibly. 18+ only.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 15, 35, 0.98)';
-            } else {
-                header.style.background = 'rgba(15, 15, 35, 0.95)';
-            }
-        });
-
-        // Add entrance animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.feature-card, .pricing-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Dynamic stats counter (simulated)
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-item h3');
-            stats.forEach(stat => {
-                const finalValue = stat.textContent;
-                let currentValue = 0;
-                const increment = finalValue.includes('%') ? 1 : 100;
-                const timer = setInterval(() => {
-                    currentValue += increment;
-                    if (finalValue.includes('%')) {
-                        stat.textContent = currentValue + '%';
-                        if (currentValue >= 87) clearInterval(timer);
-                    } else if (finalValue.includes('K')) {
-                        stat.textContent = (currentValue / 1000).toFixed(1) + 'K+';
-                        if (currentValue >= 15000) clearInterval(timer);
-                    } else if (finalValue.includes('M')) {
-                        stat.textContent = '$' + (currentValue / 1000000).toFixed(1) + 'M';
-                        if (currentValue >= 2400000) clearInterval(timer);
-                    } else if (finalValue.includes('★')) {
-                        stat.textContent = (currentValue / 10).toFixed(1) + '★';
-                        if (currentValue >= 49) clearInterval(timer);
-                    }
-                }, 50);
-            });
-        }
-
-        // Trigger stats animation when hero section is visible
-        const heroObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    heroObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        heroObserver.observe(document.querySelector('.hero'));
-    </script>
-</body>
-</html>
+                    <p><a href
