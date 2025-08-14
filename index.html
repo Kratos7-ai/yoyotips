@@ -1,125 +1,575 @@
-<style>
-    /* Header Bar Bigger */
-    header nav {
-        padding: 25px 0;
-    }
-    .logo {
-        font-size: 40px;
-        font-weight: 900;
-        animation: yoyoBounce 2s infinite;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoyo Tips - Premium Betting Tips & Predictions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Yoyo Animation */
-    @keyframes yoyoBounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-    .nav-links a {
-        font-size: 18px;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Prediction History - Table */
-    .history-table-container {
-        max-height: 600px; /* scrollable area */
-        overflow-y: auto;
-        border-radius: 12px;
-    }
+        /* Header - Enlarged */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 10px 0;
+        }
 
-    table.history-table {
-        width: 100%;
-        border-collapse: collapse;
-        color: #fff;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
 
-    table.history-table th, table.history-table td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 14px;
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    table.history-table th {
-        background: rgba(255,255,255,0.1);
-        font-size: 16px;
-        font-weight: 700;
-    }
+        .yoyo-logo {
+            width: 40px;
+            height: 40px;
+            animation: yoyo 2s ease-in-out infinite;
+        }
 
-    .result-win { color: #00ff87; font-weight: 700; }
-    .result-loss { color: #ff5757; font-weight: 700; }
-</style>
+        @keyframes yoyo {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+        }
 
-<header>
-    <nav class="container">
-        <div class="logo">YOYO TIPS</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#tips">Available Tips</a></li>
-            <li><a href="#history">History</a></li>
-            <li><a href="#terms">Terms</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- WhatsApp link for Get 50+ Odds -->
-        <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="cta-button">Get 50+ Odds</a>
-    </nav>
-</header>
+        .logo {
+            font-size: 36px; /* Increased font size */
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 135, 0.3);
+        }
 
-<section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
-                <p>Join thousands of successful bettors who trust Yoyo Tips...</p>
-                <div class="hero-buttons">
-                    <!-- Telegram link for Become a Partner -->
-                    <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" class="btn-primary">Become a Partner</a>
-                    <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Get 50+ Odds</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
 
-<!-- Prediction History Updated -->
-<section id="history" class="history-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Prediction History</h2>
-            <p>Track record of our predictions (100+ matches stored here)</p>
-        </div>
-        <div class="history-table-container">
-            <table class="history-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Match</th>
-                        <th>Prediction</th>
-                        <th>Result</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Example rows (you can extend to 200) -->
-                    <tr>
-                        <td>Aug 12, 2025</td>
-                        <td>Newcastle vs Brighton</td>
-                        <td>Over 2.5 Goals</td>
-                        <td class="result-win">✅ WON</td>
-                    </tr>
-                    <tr>
-                        <td>Aug 11, 2025</td>
-                        <td>Tottenham vs Everton</td>
-                        <td>Home Win</td>
-                        <td class="result-win">✅ WON</td>
-                    </tr>
-                    <tr>
-                        <td>Aug 10, 2025</td>
-                        <td>West Ham vs Crystal Palace</td>
-                        <td>Both Teams to Score</td>
-                        <td class="result-loss">❌ LOST</td>
-                    </tr>
-                    <!-- Add up to 200 rows -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600; /* Increased weight */
+            font-size: 18px; /* Increased size */
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00ff87;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff87, #60efff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 14px 32px; /* Increased padding */
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px; /* Increased size */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 255, 135, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px; /* Added margin for fixed header */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 135, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 72px; /* Increased size */
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            margin-top: 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .highlight {
+            color: #00ff87;
+            text-shadow: 0 0 20px rgba(0, 255, 135, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 22px; /* Increased size */
+            color: #b8b8b8;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 18px 45px; /* Increased padding */
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px; /* Increased size */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 255, 135, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 18px 45px; /* Increased padding */
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px; /* Increased size */
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00ff87;
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .warning-card {
+            background: rgba(255, 87, 87, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 87, 87, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 87, 87, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .warning-card h3 {
+            color: #ff5757;
+            font-size: 20px; /* Increased size */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .warning-card p {
+            color: #b8b8b8;
+            font-size: 16px; /* Increased size */
+            line-height: 1.5;
+        }
+
+        .stats-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 42px; /* Increased size */
+            font-weight: 900;
+            color: #00ff87;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #b8b8b8;
+            font-size: 16px; /* Increased size */
+        }
+
+        /* Tips of the Week Section */
+        .tips-section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 52px; /* Increased size */
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            font-size: 20px; /* Increased size */
+            color: #b8b8b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.1);
+        }
+
+        .tip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tip-date {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px; /* Increased size */
+        }
+
+        .tip-match {
+            font-size: 20px; /* Increased size */
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .tip-prediction {
+            color: #00ff87;
+            font-weight: 600;
+            font-size: 18px; /* Increased size */
+            margin-bottom: 10px;
+        }
+
+        .tip-analysis {
+            color: #b8b8b8;
+            font-size: 16px; /* Increased size */
+            line-height: 1.5;
+        }
+
+        /* History Section - Expanded */
+        .history-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
+        }
+
+        .history-container {
+            max-height: 800px;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            scrollbar-width: thin;
+            scrollbar-color: #00ff87 #0f0f23;
+        }
+
+        .history-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .history-container::-webkit-scrollbar-track {
+            background: #0f0f23;
+            border-radius: 10px;
+        }
+
+        .history-container::-webkit-scrollbar-thumb {
+            background-color: #00ff87;
+            border-radius: 10px;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .history-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 135, 0.1);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .result-icon {
+            font-size: 20px;
+        }
+
+        .result-win {
+            color: #00ff87;
+        }
+
+        .result-loss {
+            color: #ff5757;
+        }
+
+        .history-match {
+            font-size: 18px; /* Increased size */
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .history-prediction {
+            color: #b8b8b8;
+            font-size: 16px; /* Increased size */
+            margin-bottom: 5px;
+        }
+
+        .history-date {
+            color: #666;
+            font-size: 14px; /* Increased size */
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a1a;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #00ff87;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 22px; /* Increased size */
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #b8b8b8;
+            text-decoration: none;
+            line-height: 1.6;
+            font-size: 16px; /* Increased size */
+        }
+
+        .footer-section a:hover {
+            color: #00ff87;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 16px; /* Increased size */
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .social-links a:hover {
+            background: #00ff87;
+            color: #0f0f23;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tips-grid,
+            .history-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tip-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .history-container {
+                max-height: 500px;
+            }
+        }
+
+        /* Animation for floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Terms & Conditions Accordion */
+        .terms-accordion {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .terms-accordion:hover {
+            border-color: rgba(0, 255, 135, 0.3);
+            box-shadow: 0 10px 30
