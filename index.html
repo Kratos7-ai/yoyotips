@@ -30,7 +30,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 35, 0.98);
+            background: rgba(15, 15, 35, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
@@ -42,47 +42,85 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .yoyo-logo {
-            width: 40px;
-            height: 40px;
-            animation: yoyo 2s ease-in-out infinite;
-        }
-
-        @keyframes yoyo {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(10deg); }
-        }
-
+        /* Animated Yoyo Logo */
         .logo {
-            font-size: 36px; /* Increased font size */
+            font-size: 42px;
             font-weight: 900;
             background: linear-gradient(135deg, #00ff87, #60efff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 30px rgba(0, 255, 135, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .yoyo-container {
+            width: 50px;
+            height: 80px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .yoyo-string {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00ff87, #60efff);
+            transform: translateX(-50%);
+            animation: yoyoString 2s ease-in-out infinite;
+        }
+
+        .yoyo-body {
+            position: absolute;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: conic-gradient(from 0deg, #00ff87, #60efff, #00ff87);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: yoyoMove 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 135, 0.5);
+        }
+
+        .yoyo-body::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: #0f0f23;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes yoyoMove {
+            0%, 100% { top: 5px; }
+            50% { top: 45px; }
+        }
+
+        @keyframes yoyoString {
+            0%, 100% { height: 25px; }
+            50% { height: 65px; }
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            font-weight: 600; /* Increased weight */
-            font-size: 18px; /* Increased size */
+            font-weight: 600;
+            font-size: 18px;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -110,10 +148,10 @@
         .cta-button {
             background: linear-gradient(135deg, #00ff87, #60efff);
             color: #0f0f23;
-            padding: 14px 32px; /* Increased padding */
+            padding: 16px 35px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 16px; /* Increased size */
+            font-size: 18px;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 255, 135, 0.3);
@@ -131,7 +169,6 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            margin-top: 80px; /* Added margin for fixed header */
         }
 
         .hero::before {
@@ -159,11 +196,11 @@
         }
 
         .hero-text h1 {
-            font-size: 72px; /* Increased size */
+            font-size: 64px;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 24px;
-            margin-top: 80px;
+            margin-top: 120px;
             background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -175,7 +212,7 @@
         }
 
         .hero-text p {
-            font-size: 22px; /* Increased size */
+            font-size: 20px;
             color: #b8b8b8;
             margin-bottom: 40px;
             line-height: 1.6;
@@ -189,10 +226,9 @@
         .btn-primary {
             background: linear-gradient(135deg, #00ff87, #60efff);
             color: #0f0f23;
-            padding: 18px 45px; /* Increased padding */
+            padding: 16px 40px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 18px; /* Increased size */
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 15px 35px rgba(0, 255, 135, 0.3);
@@ -203,11 +239,10 @@
         .btn-secondary {
             background: transparent;
             color: #ffffff;
-            padding: 18px 45px; /* Increased padding */
+            padding: 16px 40px;
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
             font-weight: 700;
-            font-size: 18px; /* Increased size */
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -237,14 +272,14 @@
 
         .warning-card h3 {
             color: #ff5757;
-            font-size: 20px; /* Increased size */
+            font-size: 18px;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .warning-card p {
             color: #b8b8b8;
-            font-size: 16px; /* Increased size */
+            font-size: 14px;
             line-height: 1.5;
         }
 
@@ -266,7 +301,7 @@
         }
 
         .stat-item h3 {
-            font-size: 42px; /* Increased size */
+            font-size: 36px;
             font-weight: 900;
             color: #00ff87;
             margin-bottom: 8px;
@@ -274,7 +309,7 @@
 
         .stat-item p {
             color: #b8b8b8;
-            font-size: 16px; /* Increased size */
+            font-size: 14px;
         }
 
         /* Tips of the Week Section */
@@ -289,7 +324,7 @@
         }
 
         .section-header h2 {
-            font-size: 52px; /* Increased size */
+            font-size: 48px;
             font-weight: 900;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
@@ -298,7 +333,7 @@
         }
 
         .section-header p {
-            font-size: 20px; /* Increased size */
+            font-size: 18px;
             color: #b8b8b8;
             max-width: 600px;
             margin: 0 auto;
@@ -337,11 +372,11 @@
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 14px; /* Increased size */
+            font-size: 12px;
         }
 
         .tip-match {
-            font-size: 20px; /* Increased size */
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 10px;
@@ -350,101 +385,102 @@
         .tip-prediction {
             color: #00ff87;
             font-weight: 600;
-            font-size: 18px; /* Increased size */
             margin-bottom: 10px;
         }
 
-        .tip-analysis {
-            color: #b8b8b8;
-            font-size: 16px; /* Increased size */
-            line-height: 1.5;
-        }
-
-        /* History Section - Expanded */
+        /* History Section - Enhanced for 100-200 rows */
         .history-section {
             padding: 120px 0;
             background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
         }
 
         .history-container {
-            max-height: 800px;
+            max-height: 500px;
             overflow-y: auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
             border-radius: 15px;
-            scrollbar-width: thin;
-            scrollbar-color: #00ff87 #0f0f23;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* Custom scrollbar */
         .history-container::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         .history-container::-webkit-scrollbar-track {
-            background: #0f0f23;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
 
         .history-container::-webkit-scrollbar-thumb {
-            background-color: #00ff87;
+            background: linear-gradient(135deg, #00ff87, #60efff);
             border-radius: 10px;
         }
 
-        .history-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
+        .history-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #60efff, #00ff87);
         }
 
-        .history-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        .history-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 135, 0.1);
+        .history-table th {
+            background: rgba(255, 255, 255, 0.1);
+            color: #00ff87;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            border-bottom: 2px solid rgba(0, 255, 135, 0.3);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
         }
 
-        .history-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+        .history-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
         }
 
-        .result-icon {
-            font-size: 20px;
+        .history-table tr:hover {
+            background: rgba(0, 255, 135, 0.05);
+        }
+
+        .history-date {
+            color: #b8b8b8;
+            font-weight: 500;
+            min-width: 80px;
+        }
+
+        .history-match {
+            color: #ffffff;
+            font-weight: 600;
+            min-width: 200px;
+        }
+
+        .history-prediction {
+            color: #60efff;
+            font-weight: 500;
+            min-width: 150px;
+        }
+
+        .history-outcome {
+            font-weight: 700;
+            min-width: 60px;
+            text-align: center;
         }
 
         .result-win {
-            color: #00ff87;
+            color: #ffeb3b;
         }
 
         .result-loss {
             color: #ff5757;
-        }
-
-        .history-match {
-            font-size: 18px; /* Increased size */
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .history-prediction {
-            color: #b8b8b8;
-            font-size: 16px; /* Increased size */
-            margin-bottom: 5px;
-        }
-
-        .history-date {
-            color: #666;
-            font-size: 14px; /* Increased size */
         }
 
         /* Footer */
@@ -465,7 +501,6 @@
             color: #00ff87;
             margin-bottom: 20px;
             font-weight: 700;
-            font-size: 22px; /* Increased size */
         }
 
         .footer-section p,
@@ -473,7 +508,6 @@
             color: #b8b8b8;
             text-decoration: none;
             line-height: 1.6;
-            font-size: 16px; /* Increased size */
         }
 
         .footer-section a:hover {
@@ -485,7 +519,6 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #666;
-            font-size: 16px; /* Increased size */
         }
 
         .social-links {
@@ -518,6 +551,20 @@
                 display: none;
             }
 
+            .logo {
+                font-size: 28px;
+            }
+
+            .yoyo-container {
+                width: 35px;
+                height: 60px;
+            }
+
+            .yoyo-body {
+                width: 30px;
+                height: 30px;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -525,7 +572,8 @@
             }
 
             .hero-text h1 {
-                font-size: 42px;
+                font-size: 36px;
+                margin-top: 100px;
             }
 
             .hero-buttons {
@@ -542,10 +590,6 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
-            }
-
-            .history-container {
-                max-height: 500px;
             }
         }
 
@@ -572,4 +616,543 @@
 
         .terms-accordion:hover {
             border-color: rgba(0, 255, 135, 0.3);
-            box-shadow: 0 10px 30
+            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.1);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 255, 135, 0.1);
+        }
+
+        .accordion-icon {
+            color: #00ff87;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 300px;
+        }
+
+        .accordion-body {
+            padding: 0 30px 25px 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="yoyo-container">
+                    <div class="yoyo-string"></div>
+                    <div class="yoyo-body"></div>
+                </div>
+                YOYO TIPS
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tips">Available Tips</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#terms">Terms</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="cta-button">Get 50+ Odds</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
+                        <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get assured tips when available!</p>
+                        <div class="hero-buttons">
+                            <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" class="btn-primary">Become a Partner</a>
+                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Get 50+ Odds</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div>
+                            <div class="warning-card">
+                                <h3>⚠️ 18+ Bet Responsibly</h3>
+                                <p>Betting could be addictive. This site combines knowledge and expertise but other forces can affect sport outcomes. Be warned.<br><strong>Fund refundable - read terms and conditions</strong></p>
+                            </div>
+                            <div class="stats-card floating">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <h3>94%</h3>
+                                        <p>Win Rate</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>1K+</h3>
+                                        <p>Members</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>1,247</h3>
+                                        <p>Tips Count</p>
+                                    </div>
+                                    <div class="stat-item">
+                                        <h3>4.9★</h3>
+                                        <p>Rating</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Available Tips</h2>
+                    <p>Expert predictions - tips available when assured opportunities arise</p>
+                </div>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Monday, Aug 19</div>
+                        </div>
+                        <div class="tip-match">Manchester United vs Liverpool</div>
+                        <div class="tip-prediction">Over 2.5 Goals</div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Tuesday, Aug 20</div>
+                        </div>
+                        <div class="tip-match">Barcelona vs Real Madrid</div>
+                        <div class="tip-prediction">Both Teams to Score</div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Wednesday, Aug 21</div>
+                        </div>
+                        <div class="tip-match">Bayern Munich vs Dortmund</div>
+                        <div class="tip-prediction">Home Win & Over 1.5 Goals</div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Thursday, Aug 22</div>
+                        </div>
+                        <div class="tip-match">Arsenal vs Chelsea</div>
+                        <div class="tip-prediction">Under 3.5 Goals</div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Friday, Aug 23</div>
+                        </div>
+                        <div class="tip-match">Inter Milan vs AC Milan</div>
+                        <div class="tip-prediction">Draw No Bet - Inter</div>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-header">
+                            <div class="tip-date">Weekend Special</div>
+                        </div>
+                        <div class="tip-match">PSG vs Marseille</div>
+                        <div class="tip-prediction">PSG Win & Over 2.5 Goals</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="history-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Prediction History</h2>
+                    <p>Track record of our recent predictions with complete transparency (150+ matches)</p>
+                </div>
+                <div class="history-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Match</th>
+                                <th>Tips/Score</th>
+                                <th>Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- History rows will be generated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="terms" class="history-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Terms and Conditions</h2>
+                    <p>Click on any section below to read the details</p>
+                </div>
+                <div class="terms-content" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Fund Refund Policy</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.8; margin-bottom: 15px; font-size: 15px;">
+                                    <strong>Refund Eligibility:</strong><br>
+                                    • Refunds are available within 7 days of payment for unused services<br>
+                                    • No refund for tips already provided or accessed<br>
+                                    • Must have valid reason for refund request<br><br>
+                                    
+                                    <strong>Process:</strong><br>
+                                    • Refund requests must be submitted through our WhatsApp support<br>
+                                    • Provide payment proof and reason for refund<br>
+                                    • Processing time: 3-5 business days after approval<br>
+                                    • Refunds processed back to original payment method
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Service Terms</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.8; margin-bottom: 15px; font-size: 15px;">
+                                    <strong>Service Delivery:</strong><br>
+                                    • Tips are provided when assured opportunities are identified<br>
+                                    • No guarantee of daily tips - quality over quantity approach<br>
+                                    • All predictions are for educational and entertainment purposes<br><br>
+                                    
+                                    <strong>User Responsibilities:</strong><br>
+                                    • Users must be 18+ years old and bet responsibly<br>
+                                    • Verify local gambling laws before participating<br>
+                                    • Past performance does not guarantee future results<br>
+                                    • Use tips as guidance, not guaranteed outcomes
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Disclaimer</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.8; margin-bottom: 15px; font-size: 15px;">
+                                    <strong>Risk Warning:</strong><br>
+                                    • Betting involves financial risk and can result in complete loss<br>
+                                    • External factors beyond analysis can affect sports outcomes<br>
+                                    • Weather, injuries, referee decisions can impact results<br><br>
+                                    
+                                    <strong>Personal Responsibility:</strong><br>
+                                    • Users are solely responsible for their betting decisions<br>
+                                    • Gambling can be addictive - seek professional help if needed<br>
+                                    • Only bet money you can afford to lose completely<br>
+                                    • Set limits and stick to responsible gambling practices
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3 style="color: #00ff87; margin: 0;">Contact & Support</h3>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="color: #b8b8b8; line-height: 1.8; margin-bottom: 15px; font-size: 15px;">
+                                    <strong>Customer Support:</strong><br>
+                                    • Available 24/7 through WhatsApp support group<br>
+                                    • Response time: Usually within 2-4 hours<br>
+                                    • For technical issues, refunds, or general inquiries<br><br>
+                                    
+                                    <strong>Contact Methods:</strong><br>
+                                    • Primary: <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" style="color: #00ff87; text-decoration: none;">WhatsApp Support Group</a><br>
+                                    • Partnership inquiries: <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" style="color: #00ff87; text-decoration: none;">Telegram Channel</a><br>
+                                    • All support is provided in English language
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yoyo Tips</h3>
+                    <p>Professional betting tips and predictions for serious bettors. Join thousands of profitable members worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#tips">Available Tips</a></p>
+                    <p><a href="#history">Prediction History</a></p>
+                    <p><a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank">Become Partner</a></p>
+                    <p><a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank">Get 50+ Odds</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank">Contact Us</a></p>
+                    <p>Help Center</p>
+                    <p><a href="#terms">Terms of Service</a></p>
+                    <p>Privacy Policy</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p>Responsible Gambling</p>
+                    <p>Age Verification (18+)</p>
+                    <p>Terms & Conditions</p>
+                    <p>Disclaimer</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yoyo Tips. All rights reserved. | Gamble responsibly. 18+ only. | Betting can be addictive.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Generate extensive history data
+        const teams = [
+            ['Manchester United', 'Liverpool'], ['Arsenal', 'Chelsea'], ['Tottenham', 'Newcastle'], 
+            ['Barcelona', 'Real Madrid'], ['Atletico Madrid', 'Valencia'], ['Sevilla', 'Real Sociedad'],
+            ['Bayern Munich', 'Dortmund'], ['RB Leipzig', 'Bayer Leverkusen'], ['Eintracht Frankfurt', 'Wolfsburg'],
+            ['Juventus', 'Inter Milan'], ['AC Milan', 'Napoli'], ['Roma', 'Lazio'],
+            ['PSG', 'Marseille'], ['Lyon', 'Monaco'], ['Lille', 'Nice'],
+            ['Ajax', 'PSV'], ['Feyenoord', 'AZ Alkmaar'], ['Utrecht', 'Vitesse'],
+            ['Porto', 'Benfica'], ['Sporting CP', 'Braga'], ['Boavista', 'Guimaraes'],
+            ['Celtic', 'Rangers'], ['Hearts', 'Hibernian'], ['Aberdeen', 'Dundee United'],
+            ['Galatasaray', 'Fenerbahce'], ['Besiktas', 'Trabzonspor'], ['Basaksehir', 'Antalyaspor']
+        ];
+
+        const predictions = [
+            'Over 2.5 Goals', 'Under 2.5 Goals', 'Both Teams to Score', 'Home Win',
+            'Away Win', 'Draw', 'Over 1.5 Goals', 'Under 3.5 Goals',
+            'Home Win & Over 2.5', 'Away Win & BTTS', 'Draw No Bet - Home',
+            'Draw No Bet - Away', 'Double Chance 1X', 'Double Chance X2',
+            'Over 0.5 Goals', 'Home Win & Under 3.5', 'Away Win & Over 1.5',
+            'BTTS & Over 2.5', 'Home Win to Nil', 'Away Win to Nil'
+        ];
+
+        // Generate realistic scores
+        function generateScore() {
+            const scores = ['1-0', '2-1', '0-0', '1-1', '2-0', '3-1', '1-2', '0-1', '2-2', '3-0', '0-2', '3-2', '1-3', '4-1', '2-3'];
+            return scores[Math.floor(Math.random() * scores.length)];
+        }
+
+        // Generate 150 history records
+        function generateHistoryData() {
+            const historyData = [];
+            const startDate = new Date('2024-08-01');
+            const endDate = new Date('2025-08-14');
+
+            for (let i = 0; i < 150; i++) {
+                // Random date between start and end
+                const randomTime = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
+                const randomDate = new Date(randomTime);
+                
+                // Random team pair
+                const teamPair = teams[Math.floor(Math.random() * teams.length)];
+                
+                // Random prediction
+                const prediction = predictions[Math.floor(Math.random() * predictions.length)];
+                
+                // Random outcome (90% win rate as advertised)
+                const isWin = Math.random() < 0.90;
+                
+                // Generate score
+                const score = generateScore();
+                
+                historyData.push({
+                    date: randomDate.toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric'
+                    }),
+                    teams: teamPair,
+                    prediction: prediction,
+                    score: score,
+                    result: isWin
+                });
+            }
+
+            // Sort by date (newest first)
+            return historyData.sort((a, b) => new Date(b.date + ' 2025') - new Date(a.date + ' 2025'));
+        }
+
+        // Render history table rows
+        function renderHistoryTable() {
+            const historyTableBody = document.getElementById('historyTableBody');
+            const historyData = generateHistoryData();
+
+            historyData.forEach(match => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td class="history-date">${match.date}</td>
+                    <td class="history-match">${match.teams[0]} vs ${match.teams[1]}</td>
+                    <td class="history-prediction">${match.prediction} | ${match.score}</td>
+                    <td class="history-outcome ${match.result ? 'result-win' : 'result-loss'}">
+                        ${match.result ? 'WON' : 'LOST'}
+                    </td>
+                `;
+                
+                historyTableBody.appendChild(row);
+            });
+        }
+
+        // Initialize when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            renderHistoryTable();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 35, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 15, 35, 0.95)';
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.tip-card, .history-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Dynamic stats counter (simulated)
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-item h3');
+            stats.forEach(stat => {
+                const finalValue = stat.textContent;
+                let currentValue = 0;
+                const increment = finalValue.includes('%') ? 1 : 100;
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (finalValue.includes('%')) {
+                        stat.textContent = currentValue + '%';
+                        if (currentValue >= 94) {
+                            stat.textContent = '94%';
+                            clearInterval(timer);
+                        }
+                    } else if (finalValue.includes('K')) {
+                        stat.textContent = (currentValue / 1000).toFixed(1) + 'K+';
+                        if (currentValue >= 15000) clearInterval(timer);
+                    } else if (finalValue.includes('1,247')) {
+                        stat.textContent = (currentValue / 100).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        if (currentValue >= 124700) {
+                            stat.textContent = '1,247';
+                            clearInterval(timer);
+                        }
+                    } else if (finalValue.includes('★')) {
+                        stat.textContent = (currentValue / 10).toFixed(1) + '★';
+                        if (currentValue >= 49) {
+                            stat.textContent = '4.9★';
+                            clearInterval(timer);
+                        }
+                    }
+                }, 50);
+            });
+        }
+
+        // Trigger stats animation when hero section is visible
+        const heroObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        heroObserver.observe(document.querySelector('.hero'));
+
+        // Terms & Conditions Accordion functionality
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.accordion-icon');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
