@@ -341,8 +341,8 @@
 
         .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
         }
 
         .tip-card {
@@ -350,13 +350,33 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .tip-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 255, 135, 0.1);
+        }
+
+        /* Premium tip styling */
+        .tip-card.premium {
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        .tip-card.premium::before {
+            content: '👑 PREMIUM';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #0f0f23;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
         }
 
         .tip-header {
@@ -375,17 +395,36 @@
             font-size: 12px;
         }
 
+        .tip-confidence {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
         .tip-match {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .tip-prediction {
             color: #00ff87;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .tip-analysis {
+            color: #b8b8b8;
+            font-size: 12px;
+            line-height: 1.4;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* History Section - Enhanced for 100-200 rows */
@@ -503,15 +542,17 @@
             font-weight: 700;
         }
 
-        .footer-section p,
         .footer-section a {
-            color: #b8b8b8;
+            color: #00ff87;
             text-decoration: none;
             line-height: 1.6;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .footer-section a:hover {
-            color: #00ff87;
+            color: #60efff;
+            text-decoration: underline;
         }
 
         .footer-bottom {
@@ -687,8 +728,8 @@
                         <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
                         <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get assured tips when available!</p>
                         <div class="hero-buttons">
-                            <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" class="btn-primary">Become a Partner</a>
-                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Get 50+ Odds</a>
+                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-primary">Get 50+ Odds</a>
+                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Become a Partner</a>
                         </div>
                     </div>
                     <div class="hero-visual">
@@ -700,7 +741,7 @@
                             <div class="stats-card floating">
                                 <div class="stats-grid">
                                     <div class="stat-item">
-                                        <h3>94%</h3>
+                                        <h3>100%</h3>
                                         <p>Win Rate</p>
                                     </div>
                                     <div class="stat-item">
@@ -708,7 +749,7 @@
                                         <p>Members</p>
                                     </div>
                                     <div class="stat-item">
-                                        <h3>1,247</h3>
+                                        <h3>1</h3>
                                         <p>Tips Count</p>
                                     </div>
                                     <div class="stat-item">
@@ -726,19 +767,12 @@
         <section id="tips" class="tips-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Available Tips</h2>
-                    <p>Expert predictions - tips available when assured opportunities arise</p>
+                    <h2>Available Tips - 12 Premium Predictions</h2>
+                    <p>Expert analysis with 95%+ accuracy - tips available when mathematical certainties arise</p>
                 </div>
                 <div class="tips-grid">
-                 
-                    <div class="tip-card">
-                        <div class="tip-header">
-                            <div class="tip-date">Saturday, Aug 15</div>
-                        </div>
-                        <div class="tip-match">SLAVIA MOZYR vs GOMEL</div>
-                        <div class="tip-prediction">Home Win & Over 1.5 Goals</div>
-                    </div>
-
+                    
+                    <!-- Remaining 3 original tips -->
                     <div class="tip-card">
                         <div class="tip-header">
                             <div class="tip-date">Saturday, Aug 16</div>
@@ -762,6 +796,89 @@
                         <div class="tip-match">OREBRO vs ORGRYTE</div>
                         <div class="tip-prediction">AWAY WIN & OVER 1.5 GOALS</div>
                     </div>
+
+                    <!-- 9 Premium Tips from verified list -->
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 16</div>
+                            <div class="tip-confidence">99% SURE</div>
+                        </div>
+                        <div class="tip-match">UNION LA CALERA vs D. LA SERENA</div>
+                        <div class="tip-prediction">UNDER 2.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 16</div>
+                            <div class="tip-confidence">99% SURE</div>
+                        </div>
+                        <div class="tip-match">MITO HOLLYHOCK vs JUBILO IWATA</div>
+                        <div class="tip-prediction">HOME WIN OR DRAW</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 16</div>
+                            <div class="tip-confidence">99% SURE</div>
+                        </div>
+                        <div class="tip-match">FC DNEPR MOGILEV vs UNI MINSK</div>
+                        <div class="tip-prediction">HOME WIN</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">99% SURE</div>
+                        </div>
+                        <div class="tip-match">CEARA vs RB BRAGANTINO</div>
+                        <div class="tip-prediction">UNDER 2.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">98% SURE</div>
+                        </div>
+                        <div class="tip-match">SHENYANG URBAN vs QINGDAO RED LIONS</div>
+                        <div class="tip-prediction">HOME WIN</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">98% SURE</div>
+                        </div>
+                        <div class="tip-match">FLORA TALLINN vs LAAGRI</div>
+                        <div class="tip-prediction">HOME WIN OR DRAW</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">98% SURE</div>
+                        </div>
+                        <div class="tip-match">FAGIANO OKAYAMA vs KASHIWA REYSOL</div>
+                        <div class="tip-prediction">AWAY TEAM WILL SCORE</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">97% SURE</div>
+                        </div>
+                        <div class="tip-match">VISSEL KOBE vs YOKOHAMA FC</div>
+                        <div class="tip-prediction">HOME WIN OR DRAW</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 17</div>
+                            <div class="tip-confidence">97% SURE</div>
+                        </div>
+                        <div class="tip-match">VILA NOVA vs GOIAS</div>
+                        <div class="tip-prediction">AWAY WIN</div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -770,7 +887,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Prediction History</h2>
-                    <p>Track record of our recent predictions with complete transparency (150+ matches)</p>
+                    <p>Track record of our recent predictions with complete transparency</p>
                 </div>
                 <div class="history-container">
                     <table class="history-table">
@@ -783,7 +900,12 @@
                             </tr>
                         </thead>
                         <tbody id="historyTableBody">
-                            <!-- History rows will be generated by JavaScript -->
+                            <tr>
+                                <td class="history-date">Aug 15</td>
+                                <td class="history-match">SLAVIA MOZYR vs GOMEL</td>
+                                <td class="history-prediction">Home Win & Over 1.5 Goals | 2-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -934,99 +1056,6 @@
     </footer>
 
     <script>
-        // Generate extensive history data
-        const teams = [
-            ['Manchester United', 'Liverpool'], ['Arsenal', 'Chelsea'], ['Tottenham', 'Newcastle'], 
-            ['Barcelona', 'Real Madrid'], ['Atletico Madrid', 'Valencia'], ['Sevilla', 'Real Sociedad'],
-            ['Bayern Munich', 'Dortmund'], ['RB Leipzig', 'Bayer Leverkusen'], ['Eintracht Frankfurt', 'Wolfsburg'],
-            ['Juventus', 'Inter Milan'], ['AC Milan', 'Napoli'], ['Roma', 'Lazio'],
-            ['PSG', 'Marseille'], ['Lyon', 'Monaco'], ['Lille', 'Nice'],
-            ['Ajax', 'PSV'], ['Feyenoord', 'AZ Alkmaar'], ['Utrecht', 'Vitesse'],
-            ['Porto', 'Benfica'], ['Sporting CP', 'Braga'], ['Boavista', 'Guimaraes'],
-            ['Celtic', 'Rangers'], ['Hearts', 'Hibernian'], ['Aberdeen', 'Dundee United'],
-            ['Galatasaray', 'Fenerbahce'], ['Besiktas', 'Trabzonspor'], ['Basaksehir', 'Antalyaspor']
-        ];
-
-        const predictions = [
-            'Over 2.5 Goals', 'Under 2.5 Goals', 'Both Teams to Score', 'Home Win',
-            'Away Win', 'Draw', 'Over 1.5 Goals', 'Under 3.5 Goals',
-            'Home Win & Over 2.5', 'Away Win & BTTS', 'Draw No Bet - Home',
-            'Draw No Bet - Away', 'Double Chance 1X', 'Double Chance X2',
-            'Over 0.5 Goals', 'Home Win & Under 3.5', 'Away Win & Over 1.5',
-            'BTTS & Over 2.5', 'Home Win to Nil', 'Away Win to Nil'
-        ];
-
-        // Generate realistic scores
-        function generateScore() {
-            const scores = ['1-0', '2-1', '0-0', '1-1', '2-0', '3-1', '1-2', '0-1', '2-2', '3-0', '0-2', '3-2', '1-3', '4-1', '2-3'];
-            return scores[Math.floor(Math.random() * scores.length)];
-        }
-
-        // Generate 150 history records
-        function generateHistoryData() {
-            const historyData = [];
-            const startDate = new Date('2024-08-01');
-            const endDate = new Date('2025-08-14');
-
-            for (let i = 0; i < 150; i++) {
-                // Random date between start and end
-                const randomTime = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
-                const randomDate = new Date(randomTime);
-                
-                // Random team pair
-                const teamPair = teams[Math.floor(Math.random() * teams.length)];
-                
-                // Random prediction
-                const prediction = predictions[Math.floor(Math.random() * predictions.length)];
-                
-                // Random outcome (90% win rate as advertised)
-                const isWin = Math.random() < 0.90;
-                
-                // Generate score
-                const score = generateScore();
-                
-                historyData.push({
-                    date: randomDate.toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric'
-                    }),
-                    teams: teamPair,
-                    prediction: prediction,
-                    score: score,
-                    result: isWin
-                });
-            }
-
-            // Sort by date (newest first)
-            return historyData.sort((a, b) => new Date(b.date + ' 2025') - new Date(a.date + ' 2025'));
-        }
-
-        // Render history table rows
-        function renderHistoryTable() {
-            const historyTableBody = document.getElementById('historyTableBody');
-            const historyData = generateHistoryData();
-
-            historyData.forEach(match => {
-                const row = document.createElement('tr');
-                
-                row.innerHTML = `
-                    <td class="history-date">${match.date}</td>
-                    <td class="history-match">${match.teams[0]} vs ${match.teams[1]}</td>
-                    <td class="history-prediction">${match.prediction} | ${match.score}</td>
-                    <td class="history-outcome ${match.result ? 'result-win' : 'result-loss'}">
-                        ${match.result ? 'WON' : 'LOST'}
-                    </td>
-                `;
-                
-                historyTableBody.appendChild(row);
-            });
-        }
-
-        // Initialize when DOM loads
-        document.addEventListener('DOMContentLoaded', function() {
-            renderHistoryTable();
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1080,22 +1109,22 @@
             stats.forEach(stat => {
                 const finalValue = stat.textContent;
                 let currentValue = 0;
-                const increment = finalValue.includes('%') ? 1 : 100;
+                const increment = finalValue.includes('%') ? 1 : (finalValue === '1' ? 1 : 100);
                 const timer = setInterval(() => {
                     currentValue += increment;
                     if (finalValue.includes('%')) {
                         stat.textContent = currentValue + '%';
-                        if (currentValue >= 94) {
-                            stat.textContent = '94%';
+                        if (currentValue >= 100) {
+                            stat.textContent = '100%';
                             clearInterval(timer);
                         }
                     } else if (finalValue.includes('K')) {
                         stat.textContent = (currentValue / 1000).toFixed(1) + 'K+';
                         if (currentValue >= 15000) clearInterval(timer);
-                    } else if (finalValue.includes('1,247')) {
-                        stat.textContent = (currentValue / 100).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                        if (currentValue >= 124700) {
-                            stat.textContent = '1,247';
+                    } else if (finalValue === '1') {
+                        stat.textContent = currentValue;
+                        if (currentValue >= 1) {
+                            stat.textContent = '1';
                             clearInterval(timer);
                         }
                     } else if (finalValue.includes('★')) {
