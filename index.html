@@ -312,12 +312,67 @@
             font-size: 14px;
         }
 
-        /* Tips of the Week Section */
-        .tips-section {
+        /* No Tips Available Section */
+        .no-tips-section {
             padding: 120px 0;
             position: relative;
+            text-align: center;
         }
 
+        .no-tips-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .no-tips-icon {
+            font-size: 80px;
+            color: #60efff;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .no-tips-card h3 {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .no-tips-card p {
+            font-size: 18px;
+            color: #b8b8b8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .notify-button {
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            color: #0f0f23;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 255, 135, 0.3);
+            display: inline-block;
+        }
+
+        .notify-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.5);
+        }
+
+        /* Section Header Styles */
         .section-header {
             text-align: center;
             margin-bottom: 80px;
@@ -339,95 +394,7 @@
             margin: 0 auto;
         }
 
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .tip-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.1);
-        }
-
-        /* Premium tip styling */
-        .tip-card.premium {
-            border: 2px solid rgba(255, 215, 0, 0.5);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-        }
-
-        .tip-card.premium::before {
-            content: '👑 PREMIUM';
-            position: absolute;
-            top: -10px;
-            right: 15px;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #0f0f23;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 800;
-        }
-
-        .tip-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .tip-date {
-            background: linear-gradient(135deg, #00ff87, #60efff);
-            color: #0f0f23;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 12px;
-        }
-
-        .tip-confidence {
-            background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        .tip-match {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .tip-prediction {
-            color: #00ff87;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .tip-analysis {
-            color: #b8b8b8;
-            font-size: 12px;
-            line-height: 1.4;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* History Section - Enhanced for 100-200 rows */
+        /* History Section - Enhanced */
         .history-section {
             padding: 120px 0;
             background: linear-gradient(135deg, rgba(0, 255, 135, 0.05) 0%, rgba(96, 239, 255, 0.05) 100%);
@@ -515,11 +482,65 @@
         }
 
         .result-win {
-            color: #ffeb3b;
+            color: #00ff87;
         }
 
         .result-loss {
             color: #ff5757;
+        }
+
+        /* Terms & Conditions Accordion */
+        .terms-accordion {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .terms-accordion:hover {
+            border-color: rgba(0, 255, 135, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.1);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 255, 135, 0.1);
+        }
+
+        .accordion-icon {
+            color: #00ff87;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 300px;
+        }
+
+        .accordion-body {
+            padding: 0 30px 25px 30px;
         }
 
         /* Footer */
@@ -622,15 +643,16 @@
                 align-items: center;
             }
 
-            .tips-grid,
-            .history-grid {
-                grid-template-columns: 1fr;
+            .no-tips-card {
+                padding: 40px 25px;
             }
 
-            .tip-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+            .no-tips-icon {
+                font-size: 60px;
+            }
+
+            .no-tips-card h3 {
+                font-size: 24px;
             }
         }
 
@@ -642,60 +664,6 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
-        }
-
-        /* Terms & Conditions Accordion */
-        .terms-accordion {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .terms-accordion:hover {
-            border-color: rgba(0, 255, 135, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 255, 135, 0.1);
-        }
-
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .accordion-header:hover {
-            background: rgba(0, 255, 135, 0.1);
-        }
-
-        .accordion-icon {
-            color: #00ff87;
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-header.active .accordion-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .accordion-content.active {
-            max-height: 300px;
-        }
-
-        .accordion-body {
-            padding: 0 30px 25px 30px;
         }
     </style>
 </head>
@@ -716,7 +684,7 @@
                 <li><a href="#terms">Terms</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="cta-button">Get 50+ Odds</a>
+            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="cta-button">Get Tips</a>
         </nav>
     </header>
 
@@ -728,8 +696,8 @@
                         <h1>Professional Betting Tips with <span class="highlight">Proven Results</span></h1>
                         <p>Join thousands of successful bettors who trust Yoyo Tips for premium predictions, detailed analysis, and consistent profits. Get assured tips when available!</p>
                         <div class="hero-buttons">
-                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-primary">Get 50+ Odds</a>
-                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-secondary">Become a Partner</a>
+                            <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="btn-primary">Get Premium Tips</a>
+                            <a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank" class="btn-secondary">Become a Partner</a>
                         </div>
                     </div>
                     <div class="hero-visual">
@@ -741,15 +709,15 @@
                             <div class="stats-card floating">
                                 <div class="stats-grid">
                                     <div class="stat-item">
-                                        <h3>100%</h3>
+                                        <h3>92%</h3>
                                         <p>Win Rate</p>
                                     </div>
                                     <div class="stat-item">
-                                        <h3>1K+</h3>
+                                        <h3>1.2K+</h3>
                                         <p>Members</p>
                                     </div>
                                     <div class="stat-item">
-                                        <h3>9</h3>
+                                        <h3>14</h3>
                                         <p>Tips Count</p>
                                     </div>
                                     <div class="stat-item">
@@ -764,69 +732,19 @@
             </div>
         </section>
 
-        <section id="tips" class="tips-section">
+        <section id="tips" class="no-tips-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Available Tips - Week of August 19-23</h2>
-                    <p>Expert analysis with 95%+ accuracy - tips available when mathematical certainties arise</p>
+                    <h2>Available Tips</h2>
+                    <p>Premium predictions with mathematical certainty - tips available when opportunities arise</p>
                 </div>
-                <div class="tips-grid">
-                    
-                    <!-- New Tips of the Week - Aug 19-23 -->
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 19</div>
-                            <div class="tip-confidence">98% SURE</div>
-                        </div>
-                        <div class="tip-match">LYNGBY BK vs HILLEROD FODBOLD</div>
-                        <div class="tip-prediction">HOME WIN OR DRAW</div>
+                <div class="no-tips-card">
+                    <div class="no-tips-icon">
+                        <i class="fas fa-search"></i>
                     </div>
-
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 20</div>
-                            <div class="tip-confidence">99% SURE</div>
-                        </div>
-                        <div class="tip-match">FK PANEVEZYS vs FK BANGA GARGZDAI</div>
-                        <div class="tip-prediction">HOME WIN OR AWAY WIN</div>
-                    </div>
-
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 21</div>
-                            <div class="tip-confidence">97% SURE</div>
-                        </div>
-                        <div class="tip-match">NK CELJE vs FC BANIK OSTRAVA</div>
-                        <div class="tip-prediction">AWAY WIN (0:2 HANDICAP)</div>
-                    </div>
-
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 22</div>
-                            <div class="tip-confidence">98% SURE</div>
-                        </div>
-                        <div class="tip-match">ALWAYS READY vs ORIENTE PETROLERO</div>
-                        <div class="tip-prediction">HOME WIN OR AWAY WIN</div>
-                    </div>
-
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 22</div>
-                            <div class="tip-confidence">96% SURE</div>
-                        </div>
-                        <div class="tip-match">VITEBSK vs NAFTAN</div>
-                        <div class="tip-prediction">OVER 1.5 GOALS</div>
-                    </div>
-
-                    <div class="tip-card premium">
-                        <div class="tip-header">
-                            <div class="tip-date">Aug 23</div>
-                            <div class="tip-confidence">98% SURE</div>
-                        </div>
-                        <div class="tip-match">YUNNAN YUKUN vs CHENGDU RONGCHENG</div>
-                        <div class="tip-prediction">OVER 1.5 GOALS</div>
-                    </div>
-
+                    <h3>No Tips Available Right Now</h3>
+                    <p>Our expert analysts are currently scanning thousands of matches for mathematical certainties. We only provide tips when we identify sure opportunities with 95%+ confidence. Quality over quantity is our approach.</p>
+                    <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="notify-button">Get Notified of New Tips</a>
                 </div>
             </div>
         </section>
@@ -848,6 +766,43 @@
                             </tr>
                         </thead>
                         <tbody id="historyTableBody">
+                            <!-- Latest completed matches -->
+                            <tr>
+                                <td class="history-date">Aug 23</td>
+                                <td class="history-match">YUNNAN YUKUN vs CHENGDU RONGCHENG</td>
+                                <td class="history-prediction">Over 1.5 Goals | 1-5</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 22</td>
+                                <td class="history-match">NAFTAN vs VITEBSK</td>
+                                <td class="history-prediction">Over 1.5 Goals | 2-0</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 22</td>
+                                <td class="history-match">ALWAYS READY vs ORIENTE PETROLERO</td>
+                                <td class="history-prediction">Home Win or Away Win | 2-0</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 21</td>
+                                <td class="history-match">NK CELJE vs FC BANIK OSTRAVA</td>
+                                <td class="history-prediction">Away Win (0:2 Handicap) | 0-2</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 20</td>
+                                <td class="history-match">FK PANEVEZYS vs FK BANGA GARGZDAI</td>
+                                <td class="history-prediction">Home Win or Away Win | 1-0</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 19</td>
+                                <td class="history-match">LYNGBY BK vs HILLEROD FODBOLD</td>
+                                <td class="history-prediction">Home Win or Draw | 1-2</td>
+                                <td class="history-outcome result-loss">LOSS</td>
+                            </tr>
                             <tr>
                                 <td class="history-date">Aug 17</td>
                                 <td class="history-match">FLORA TALLINN vs LAAGRI</td>
@@ -874,24 +829,6 @@
                             </tr>
                             <tr>
                                 <td class="history-date">Aug 16</td>
-                                <td class="history-match">UNION LA CALERA vs D. LA SERENA</td>
-                                <td class="history-prediction">Under 3.5 Goals | 1-1</td>
-                                <td class="history-outcome result-win">WON</td>
-                            </tr>
-                            <tr>
-                                <td class="history-date">Aug 16</td>
-                                <td class="history-match">OREBRO vs ORGRYTE</td>
-                                <td class="history-prediction">Away Win | 1-3</td>
-                                <td class="history-outcome result-win">WON</td>
-                            </tr>
-                            <tr>
-                                <td class="history-date">Aug 16</td>
-                                <td class="history-match">UMEA vs KALMAR</td>
-                                <td class="history-prediction">Away Win | 0-1</td>
-                                <td class="history-outcome result-win">WON</td>
-                            </tr>
-                            <tr>
-                                <td class="history-date">Aug 16</td>
                                 <td class="history-match">JEONBUK MOTORS vs DAEGU</td>
                                 <td class="history-prediction">Home Win | 3-0</td>
                                 <td class="history-outcome result-win">WON</td>
@@ -900,6 +837,54 @@
                                 <td class="history-date">Aug 15</td>
                                 <td class="history-match">SLAVIA MOZYR vs GOMEL</td>
                                 <td class="history-prediction">Home Win | 2-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 14</td>
+                                <td class="history-match">FC TORPEDO MINSK vs FC SLUTSK</td>
+                                <td class="history-prediction">Over 2.5 Goals | 3-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 14</td>
+                                <td class="history-match">POGON SZCZECIN vs JAGIELLONIA</td>
+                                <td class="history-prediction">Both Teams to Score | 2-2</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 13</td>
+                                <td class="history-match">REAL MADRID vs ATALANTA</td>
+                                <td class="history-prediction">Over 1.5 Goals | 2-0</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 12</td>
+                                <td class="history-match">DYNAMO KIEV vs FC PARTIZAN</td>
+                                <td class="history-prediction">Home Win or Draw | 6-2</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 12</td>
+                                <td class="history-match">SLOVAN BRATISLAVA vs APOEL</td>
+                                <td class="history-prediction">Home Win | 2-0</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 11</td>
+                                <td class="history-match">FC MIDTJYLLAND vs FERENCVAROS</td>
+                                <td class="history-prediction">Over 2.5 Goals | 2-2</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 10</td>
+                                <td class="history-match">LILLE vs FENERBAHCE</td>
+                                <td class="history-prediction">Under 3.5 Goals | 1-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 9</td>
+                                <td class="history-match">RANGERS vs DYNAMO KIEV</td>
+                                <td class="history-prediction">Both Teams to Score | 1-1</td>
                                 <td class="history-outcome result-win">WON</td>
                             </tr>
                         </tbody>
@@ -1028,7 +1013,7 @@
                     <p><a href="#tips">Available Tips</a></p>
                     <p><a href="#history">Prediction History</a></p>
                     <p><a href="https://t.me/+lr0oyCCkU781Y2M8" target="_blank">Become Partner</a></p>
-                    <p><a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank">Get 50+ Odds</a></p>
+                    <p><a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank">Get Premium Tips</a></p>
                 </div>
                 <div class="footer-section">
                     <h3>Support</h3>
@@ -1092,43 +1077,44 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.tip-card, .history-card').forEach(el => {
+        document.querySelectorAll('.no-tips-card, .history-container').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
 
-        // Dynamic stats counter (simulated)
+        // Dynamic stats counter
         function animateStats() {
-            const stats = document.querySelectorAll('.stat-item h3');
-            stats.forEach(stat => {
-                const finalValue = stat.textContent;
+            const stats = [
+                { element: document.querySelector('.stat-item h3'), target: 92, suffix: '%' },
+                { element: document.querySelectorAll('.stat-item h3')[1], target: 1200, suffix: '+', divisor: 1000, decimal: 1, unit: 'K' },
+                { element: document.querySelectorAll('.stat-item h3')[2], target: 14, suffix: '' },
+                { element: document.querySelectorAll('.stat-item h3')[3], target: 49, suffix: '★', divisor: 10, decimal: 1 }
+            ];
+            
+            stats.forEach((stat, index) => {
                 let currentValue = 0;
-                const increment = finalValue.includes('%') ? 1 : (finalValue === '9' ? 1 : 100);
+                const increment = stat.target <= 14 ? 1 : (stat.target <= 49 ? 1 : Math.ceil(stat.target / 50));
+                
                 const timer = setInterval(() => {
                     currentValue += increment;
-                    if (finalValue.includes('%')) {
-                        stat.textContent = currentValue + '%';
-                        if (currentValue >= 100) {
-                            stat.textContent = '100%';
-                            clearInterval(timer);
+                    
+                    if (stat.divisor) {
+                        const displayValue = (currentValue / stat.divisor).toFixed(stat.decimal || 0);
+                        stat.element.textContent = displayValue + (stat.unit || '') + stat.suffix;
+                    } else {
+                        stat.element.textContent = currentValue + stat.suffix;
+                    }
+                    
+                    if (currentValue >= stat.target) {
+                        if (stat.divisor) {
+                            const finalValue = (stat.target / stat.divisor).toFixed(stat.decimal || 0);
+                            stat.element.textContent = finalValue + (stat.unit || '') + stat.suffix;
+                        } else {
+                            stat.element.textContent = stat.target + stat.suffix;
                         }
-                    } else if (finalValue.includes('K')) {
-                        stat.textContent = (currentValue / 1000).toFixed(1) + 'K+';
-                        if (currentValue >= 15000) clearInterval(timer);
-                    } else if (finalValue === '6') {
-                        stat.textContent = currentValue;
-                        if (currentValue >= 6) {
-                            stat.textContent = '6';
-                            clearInterval(timer);
-                        }
-                    } else if (finalValue.includes('★')) {
-                        stat.textContent = (currentValue / 10).toFixed(1) + '★';
-                        if (currentValue >= 49) {
-                            stat.textContent = '4.9★';
-                            clearInterval(timer);
-                        }
+                        clearInterval(timer);
                     }
                 }, 50);
             });
@@ -1163,6 +1149,34 @@
             content.classList.toggle('active');
             element.classList.toggle('active');
         }
+
+        // Add some loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
     </script>
 </body>
 </html>
+                                <td class="history-match">UNION LA CALERA vs D. LA SERENA</td>
+                                <td class="history-prediction">Under 3.5 Goals | 1-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 16</td>
+                                <td class="history-match">OREBRO vs ORGRYTE</td>
+                                <td class="history-prediction">Away Win | 1-3</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 16</td>
+                                <td class="history-match">UMEA vs KALMAR</td>
+                                <td class="history-prediction">Away Win | 0-1</td>
+                                <td class="history-outcome result-win">WON</td>
+                            </tr>
+                            <tr>
+                                <td class="history-date">Aug 16</td>
