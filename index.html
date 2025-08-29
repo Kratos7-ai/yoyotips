@@ -312,64 +312,89 @@
             font-size: 14px;
         }
 
-        /* No Tips Available Section */
-        .no-tips-section {
+        /* Tips Section */
+        .tips-section {
             padding: 120px 0;
             position: relative;
-            text-align: center;
         }
 
-        .no-tips-card {
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 60px 40px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .no-tips-icon {
-            font-size: 80px;
-            color: #60efff;
-            margin-bottom: 30px;
-            opacity: 0.8;
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.1);
         }
 
-        .no-tips-card h3 {
-            font-size: 32px;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #60efff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Premium tip styling */
+        .tip-card.premium {
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
         }
 
-        .no-tips-card p {
-            font-size: 18px;
-            color: #b8b8b8;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .tip-card.premium::before {
+            content: '👑 PREMIUM';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #0f0f23;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
         }
 
-        .notify-button {
+        .tip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tip-date {
             background: linear-gradient(135deg, #00ff87, #60efff);
             color: #0f0f23;
-            padding: 16px 40px;
-            border-radius: 50px;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: 700;
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 35px rgba(0, 255, 135, 0.3);
-            display: inline-block;
+            font-size: 12px;
         }
 
-        .notify-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 255, 135, 0.5);
+        .tip-confidence {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .tip-match {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .tip-prediction {
+            color: #00ff87;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
         }
 
         /* Section Header Styles */
@@ -717,7 +742,7 @@
                                         <p>Members</p>
                                     </div>
                                     <div class="stat-item">
-                                        <h3>14</h3>
+                                        <h3>23</h3>
                                         <p>Tips Count</p>
                                     </div>
                                     <div class="stat-item">
@@ -732,19 +757,96 @@
             </div>
         </section>
 
-        <section id="tips" class="no-tips-section">
+        <section id="tips" class="tips-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Available Tips</h2>
-                    <p>Premium predictions with mathematical certainty - tips available when opportunities arise</p>
+                    <h2>Available Tips - Week of August 30-31</h2>
+                    <p>Expert analysis with 95%+ accuracy - tips available when mathematical certainties arise</p>
                 </div>
-                <div class="no-tips-card">
-                    <div class="no-tips-icon">
-                        <i class="fas fa-search"></i>
+                <div class="tips-grid">
+                    
+                    <!-- New Tips of the Week - Aug 30-31 -->
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">96% SURE</div>
+                        </div>
+                        <div class="tip-match">AZUL CLARO vs TOCHIGI</div>
+                        <div class="tip-prediction">HOME WIN TO NIL (NO)</div>
                     </div>
-                    <h3>No Tips Available Right Now</h3>
-                    <p>Our expert analysts are currently scanning thousands of matches for mathematical certainties. We only provide tips when we identify sure opportunities with 95%+ confidence. Quality over quantity is our approach.</p>
-                    <a href="https://chat.whatsapp.com/BTyUp78KqJd4k8oatigTHe?mode=ac_t" target="_blank" class="notify-button">Get Notified of New Tips</a>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">97% SURE</div>
+                        </div>
+                        <div class="tip-match">EHIME vs VEGALTA</div>
+                        <div class="tip-prediction">AWAY OVER 0.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">98% SURE</div>
+                        </div>
+                        <div class="tip-match">MIDDELFART vs LYNGBY</div>
+                        <div class="tip-prediction">AWAY OVER 0.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">95% SURE</div>
+                        </div>
+                        <div class="tip-match">GOMEL vs LIDA</div>
+                        <div class="tip-prediction">OVER 1.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">96% SURE</div>
+                        </div>
+                        <div class="tip-match">MJALLBY AIF vs HALMSTAD</div>
+                        <div class="tip-prediction">HOME OVER 0.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 30</div>
+                            <div class="tip-confidence">97% SURE</div>
+                        </div>
+                        <div class="tip-match">GOIAS vs BOTAFOGO</div>
+                        <div class="tip-prediction">HOME OVER 0.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 31</div>
+                            <div class="tip-confidence">98% SURE</div>
+                        </div>
+                        <div class="tip-match">NOVI PAZAR vs CRVENA ZVEZDA</div>
+                        <div class="tip-prediction">OVER 1.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 31</div>
+                            <div class="tip-confidence">96% SURE</div>
+                        </div>
+                        <div class="tip-match">VAPRUS vs PAIDE</div>
+                        <div class="tip-prediction">OVER 1.5 GOALS</div>
+                    </div>
+
+                    <div class="tip-card premium">
+                        <div class="tip-header">
+                            <div class="tip-date">Aug 31</div>
+                            <div class="tip-confidence">99% SURE</div>
+                        </div>
+                        <div class="tip-match">STABAEK vs START</div>
+                        <div class="tip-prediction">AWAY WIN</div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -1077,7 +1179,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.no-tips-card, .history-container').forEach(el => {
+        document.querySelectorAll('.tip-card, .history-container').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
